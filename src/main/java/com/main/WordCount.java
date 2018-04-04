@@ -44,15 +44,6 @@ public class WordCount {
         }
     }
     public  static void main(String[]  args) throws IOException, ClassNotFoundException, InterruptedException {
-        String strInput = "hello, map reduce , nice!";
-        StringTokenizer itr = new StringTokenizer(strInput);
-        while(itr.hasMoreTokens()){
-            System.out.println(itr.nextToken());
-        }
-        if (args.length!=2){
-            System.out.println("请输入输入路径与输出路径");
-            System.exit(-1);
-        }
         Job  job=Job.getInstance();
         job.setJarByClass(WordCount.class);
         job.setMapperClass(TextSplitMapper.class);
